@@ -4,8 +4,11 @@ Repositorio con las actividades de la Clase 4: regresión lineal y regresión lo
 
 ## Contenido del repositorio
 
-- `Clase4_AA_2026.ipynb` — Actividad 1: regresión lineal
-- `academic_survival_longitudinal.csv` — dataset usado en la Actividad 1
+- `Actividad1.ipynb` — Actividad 1: regresión lineal
+- `Regresion_logistica_Actividad2.ipynb` - Actividad 2 : regresión logística
+- `Actividad1_academic_survival_longitudinal.csv` — dataset usado en la Actividad 1
+- `Actividad1_información_conjunto.md` - información acerca del dataset utilizado en la actividad 1
+- `Actividad2_usuarios_win_mac_lin.csv` - dataset usado en la actividad 2
 
 ## Actividad 1: Regresión lineal
 
@@ -51,6 +54,23 @@ Repositorio con las actividades de la Clase 4: regresión lineal y regresión lo
 | `End_of_Semester_Status` | Estado a fin de semestre | Enrolled = cursando, Dropped_Out = abandonó, Graduated = se graduó |
 | `Censored` | Dato censurado | Se dejó de seguir al estudiante, no sabemos qué pasó después |
 
+## Actividad 2: Regresión logística
+
+**Objetivo:** predecir qué sistema operativo (Windows, Macintosh o Linux) usa un usuario que visita un sitio web, a partir de cuatro variables de comportamiento tomadas de Google Analytics: duración de la visita, cantidad de páginas vistas, cantidad de acciones realizadas y la suma del valor de esas acciones.
+
+**Dataset:** `Actividad2_usuarios_win_mac_lin.csv`, provisto por la cátedra. Contiene 170 registros sin valores faltantes, con la variable objetivo codificada como:
+- 0 = Windows (86 casos)
+- 1 = Macintosh (40 casos)
+- 2 = Linux (44 casos)
+
+**Proceso:**
+1. Carga y exploración de los datos (incluye un gráfico de dispersión coloreado por clase)
+2. Definición de X (las 4 variables de comportamiento) e Y (la clase)
+3. División en entrenamiento (80%) y prueba (20%), mezclando los datos al azar antes de cortar
+4. Entrenamiento de un clasificador de regresión logística (`scikit-learn`, `LogisticRegression`)
+5. Evaluación con accuracy, matriz de confusión y reporte de clasificación (precisión, recall y f1-score por clase)
+
+**Resultado:** el modelo alcanzó un **accuracy del 79%** sobre el conjunto de prueba. Clasificó perfectamente a los usuarios de Linux (precisión 0,88, recall 1,00), mientras que los errores se concentraron entre Windows y Macintosh, las dos clases que se veían más mezcladas en el gráfico de dispersión. El detalle completo del análisis está en la conclusión del notebook.
 
 ## Cómo ejecutar los notebooks
 
